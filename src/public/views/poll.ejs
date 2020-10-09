@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../css/style.css">
+     <script src="https://cdn.jsdelivr.net/gh/Tyson3101/getElement@6ec9593/src/main.js" defer></script>
+     <title>Poll <%= poll.pollID%></title>
+</head>
+
+<body>
+     <script src="https://cdn.jsdelivr.net/gh/Tyson3101/getElement@6ec9593/src/main.js" defer></script>
+     <div class="title">
+          <h1 class="h1">Poll</h1>
+          <button onclick="redirectToHome()" class="btn">Home</button> <button onclick="redirectToAllPolls()" class="btn">All Polls</button>
+          | Poll Code:<input type="text" name="pollCode" class="pollCode" id="pollCode">
+     </div>
+     <h1 class="TopPollTitle">Poll <%= poll.pollID %></h1>
+     <button onclick="redirectToHome()" class="btn1">Home</button> <button onclick="redirectToAllPolls()" class="btn1">All Polls</button>
+     <div class="TopPollsALL2">
+          <div class="TopPolls">
+               <h2 class="pollName">Poll: <%= poll.pollName %> </h2>
+               <h4 class="pollName" id="pollInfo: <%=poll.pollID%>">Total Votes: <%= poll.totalVotes %> | Created At: <%= time(poll.createdAt, Date.now()) %><br>Share Poll: <a class="atag" href="<%= poll.pollID %>"><%= link + '/' + poll.pollID %></a></h4>
+               <div class="PollOptions"><% poll.Options.sort((a, b) => b - a).forEach(options => { %>
+                    <div class="optionName">Option: <%= options.optionName %> </div>
+                    <ul class="pollOptions">
+                         <li>
+                              <p class="current" id="Poll: <%=options.optionName%><%= number %>">Votes: <%= options.votes %></p>
+                         </li>
+                         <li><button class="VoteBtn" onclick="vote('<%= poll.pollID %>', '<%= options.optionName %>', '<%= number %>')">Vote </button>
+                         </li>
+                    </ul>
+                    <%   }); %>
+               </div>
+               <h2 style="background-color: #913dff; color: #fea8ff;" id="Voted: <%=poll.pollID%>"></h2>
+          </div>
+          <% number += 1 %>
+     </div>
+     <h1>Share Poll: <a href="/poll/<%= poll.pollID%>"><%= link %></a></h1>
+     <script src="../js/script.js" defer></script>
+     <script src="https://cdn.jsdelivr.net/gh/Tyson3101/getElement@6ec9593/src/main.js" defer></script>
+</body>
+</html>

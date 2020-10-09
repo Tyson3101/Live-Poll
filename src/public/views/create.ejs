@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../css/style.css">
+     <script src="https://cdn.jsdelivr.net/gh/Tyson3101/getElement@6ec9593/src/main.js" defer></script>
+     <title>Create a Poll</title>
+</head>
+<body>
+     <div class="title">
+          <h1 class="h1">Poll</h1>
+          <button onclick="redirectToHome()" class="btn">Home</button> <button onclick="redirectToAllPolls()" class="btn">All Polls</button>
+          | Poll Code:<input type="text" name="pollCode" class="pollCode" id="pollCode">
+     </div>
+     <h1 class="TopPollTitle">Create a Poll</h1>
+     <button onclick="redirectToHome()" class="btn1">Home</button> <button onclick="redirectToAllPolls()" class="btn1">All Polls</button>
+     <br> <br>
+     <div style="margin-left: 5px;">
+     <h2>
+          Poll Title:<br>
+          <input type="text" style="height: 5vh; width: 30vw; margin-bottom: 3vh;" name="Title" id="Title" required> <br>
+          Option 1: <br>
+          <input type="text" style="height: 5vh;" name="Option1" id="Option1" required> <br>
+          Option 2: <br>
+          <input type="text" style="height: 5vh;" name="Option2" id="Option2" required> <br>
+          <% number += 1 %>
+          <div id="Option <%= number %>" style="display: none;">
+          Option <%= number %>: <br>
+          <input type="text" style="height: 5vh;" name="Option<%= number %>" id="Option<%= number %>" required>
+          <br>
+          </div>
+          <% number += 1 %>
+          <div id="Option <%= number %>" style="display: none;">
+               Option <%= number %>: <br>
+               <input type="text" style="height: 5vh;" name="Option<%= number %>" id="Option<%= number %>" required>
+               <br>
+               </div>
+               <% number += 1 %>
+          <div id="Option <%= number %>" style="display: none;">
+               Option <%= number %>: <br>
+               <input type="text" style="height: 5vh;" name="Option<%= number %> " id="Option<%= number %>" required>
+               <br>
+          </div>
+               <% number += 1 %>
+          <div id="Option <%= number %>" style="display: none;">
+               Option <%= number %>: <br>
+               <input type="text" style="height: 5vh;" name="Option<%= number %>" id="Option<%= number %>" required>
+               <br>
+               </div>
+          <% number += 1 %>
+     </h2>
+     <input type="button" id="btnCreateOp" value="New Option" onclick="createOption()"> <br>
+     <h2>
+     Public:
+     <input id="visablitiy" style="margin-top: 2vh;" onclick="displayInfo()" type="checkbox"> <i id="publicInfo" style="display: none;">(Will show up in <a href="/poll">All Polls List)</a></i> <br>
+</h2>
+     <button type="submit" onclick="createPoll()">Create Poll</button>
+     </div>
+
+     <script src="../js/script.js" defer></script>
+</body>
+</html>
