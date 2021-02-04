@@ -1,45 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/gh/Tyson3101/getElement@6ec9593/src/main.js"
+      defer
+    ></script>
+    <title>All Polls</title>
+  </head>
 
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../css/style.css">
-     <script src="https://cdn.jsdelivr.net/gh/Tyson3101/getElement@6ec9593/src/main.js" defer></script>
-     <title>All Polls</title>
-</head>
-
-<body>
-     <div class="title">
-          <h1 class="h1">Poll</h1>
-          <button onclick="redirectToHome()" class="btn1">Home</button> <button onclick="redirectToAllCreate()" class="btn">Create A Poll</button>
-          | Poll Code:<input type="text" name="pollCode" class="pollCode" id="pollCode">
-     </div>
-     <h1 class="TopPollTitle">All Polls</h1>
-     <button onclick="redirectToHome()" class="btn1">Home</button> <button onclick="redirectToAllCreate()" class="btn1">Create A Poll</button>
-     <div class="TopPollsALL">
-          <% allPost.forEach(element => { %>
-          <% if(!element || element.type.toLowerCase() === 'info') return;  %>
-          <div class="TopPolls">
-               <h2 class="pollName">Poll: <%= element.pollName %> </h2>
-               <h4 class="pollName" id="pollInfo: <%=element.pollID%>">Total Votes: <%= element.totalVotes %> | Created At: <%= time(element.createdAt, Date.now()) %><br>Share Poll: <a class="atag" href="<%= element.pollID %>"><%= link + '/' + element.pollID %></a></h4>
-               <div class="PollOptions"><% element.Options.sort((a, b) => b - a).forEach(options => { %>
-                    <div class="optionName">Option: <%= options.optionName %> </div>
-                    <ul class="pollOptions">
-                         <li>
-                              <p class="current" id="Poll: <%=options.optionName%><%= number %>">Votes: <%= options.votes %></p>
-                         </li>
-                         <li><button class="VoteBtn" onclick="vote('<%= element.pollID %>', '<%= options.optionName %>', '<%= number %>')">Vote </button>
-                         </li>
-                    </ul>
-                    <%   }); %>
-               </div>
-               <h2 style="background-color: #913dff; color: #fea8ff;" id="Voted: <%=element.pollID%>"></h2>
-          </div>
-          <% number += 1 %>
-          <% }) %>
-     </div>
-     <script src="../js/script.js" defer></script>
-     <script src="https://cdn.jsdelivr.net/gh/Tyson3101/getElement@6ec9593/src/main.js" defer></script>
-</body>
+  <body>
+    <div class="title">
+      <h1 class="h1">Poll</h1>
+      <button onclick="redirectToHome()" class="btn1">Home</button>
+      <button onclick="redirectToAllCreate()" class="btn">Create A Poll</button>
+      | Poll Code:<input
+        type="text"
+        name="pollCode"
+        class="pollCode"
+        id="pollCode"
+      />
+    </div>
+    <h1 class="TopPollTitle">All Polls</h1>
+    <button onclick="redirectToHome()" class="btn1">Home</button>
+    <button onclick="redirectToAllCreate()" class="btn1">Create A Poll</button>
+    <div class="TopPollsALL">
+      <% allPost.forEach(element => { %> <% if(!element ||
+      element.type.toLowerCase() === 'info') return; %>
+      <div class="TopPolls">
+        <h2 class="pollName">Poll: <%= element.pollName %></h2>
+        <h4 class="pollName" id="pollInfo: <%=element.pollID%>">
+          Total Votes: <%= element.totalVotes %> | Created At: <%=
+          time(element.createdAt, Date.now()) %><br />Share Poll:
+          <a class="atag" href="/poll/<%= element.pollID %>"
+            ><%= link + '/poll/' + element.pollID %></a
+          >
+        </h4>
+        <div class="PollOptions">
+          <% element.Options.sort((a, b) => b - a).forEach(options => { %>
+          <div class="optionName">Option: <%= options.optionName %></div>
+          <ul class="pollOptions">
+            <li>
+              <p
+                class="current"
+                id="Poll: <%=options.optionName%><%= number %>"
+              >
+                Votes: <%= options.votes %>
+              </p>
+            </li>
+            <li>
+              <button
+                class="VoteBtn"
+                onclick="vote('<%= element.pollID %>', '<%= options.optionName %>', '<%= number %>')"
+              >
+                Vote
+              </button>
+            </li>
+          </ul>
+          <% }); %>
+        </div>
+        <h2
+          style="background-color: #913dff; color: #fea8ff"
+          id="Voted: <%=element.pollID%>"
+        ></h2>
+      </div>
+      <% number += 1 %> <% }) %>
+    </div>
+    <script src="../js/script.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/Tyson3101/getElement@6ec9593/src/main.js"
+      defer
+    ></script>
+  </body>
 </html>
