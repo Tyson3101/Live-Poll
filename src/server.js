@@ -40,8 +40,12 @@ app.get("/poll/create", (req, res) => {
 app.get("/poll/:pollID", async (req, res) => {
   const pollID = parseInt(req.params["pollID"]);
   const Data = await keyv.get("poll");
+  let poll = Data.find((pol) => pol.pollID === pollID);
+  if (!poll) {
+    return res.render("notFound");
+  }
   res.render("poll", {
-    poll: Data.find((pol) => pol.pollID === pollID),
+    poll,
     time,
     number: 0,
     link: req.protocol + "://" + req.get("host") + req.originalUrl,

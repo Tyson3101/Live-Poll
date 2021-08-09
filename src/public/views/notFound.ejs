@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Not Found</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-image: url("https://i.ibb.co/kQLYtBF/noBin.png");
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+      }
+
+      #buttonAA {
+        padding: 90px;
+        color: yellow;
+        background: violet;
+        font-size: 4rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="buttonAA" onclick="redirectToHome()">Home</button>
+    <script
+      src="https://cdn.jsdelivr.net/gh/Tyson3101/getElement@6ec9593/src/main.js"
+      defer
+    ></script>
+    <script>
+      function redirectToHome() {
+        window.location = "/";
+      }
+    </script>
+  </body>
+</html>
