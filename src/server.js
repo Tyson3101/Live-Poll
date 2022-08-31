@@ -143,4 +143,4 @@ async function allPosts(req, res, next) {
   next();
 }
 
-app.listen(8000, () => console.log("http://localhost:8000"));
+app.listen(process.env.PORT, () => console.log("PORT: " + process.env.PORT));
