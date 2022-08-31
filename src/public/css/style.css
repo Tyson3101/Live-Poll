@@ -1,97 +1,103 @@
-*, *::before, *::after {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: Arial, Helvetica, sans-serif;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-     background-color: darkturquoise;
+  background-color: darkturquoise;
 }
 
 li {
-     margin-left: 19px;
-     list-style: none;
+  margin-left: 19px;
+  list-style: none;
 }
 .TopPolls {
-     border: solid #000000;
-     width: 666px;
-     height: fit-content;
-     background-color: cyan;
-     margin-bottom: 20px;
+  border: solid #000000;
+  width: 666px;
+  height: fit-content;
+  background-color: cyan;
+  margin-bottom: 20px;
 }
 
 .atag {
-     color: deepskyblue;
+  color: deepskyblue;
 }
 
 .TopPollsALL2 {
-     width: 566px;
-     font-size: 1em;
-     height: fit-content;
-     background-color: cyan;
-     margin-bottom: 20px;
+  width: 566px;
+  font-size: 1em;
+  height: fit-content;
+  background-color: cyan;
+  margin-bottom: 20px;
 }
 
 .optionName {
-     color: mediumpurple;
+  color: mediumpurple;
 }
 
 .VoteBtn {
-     padding: 7px;
-     background-color: mediumslateblue;
+  padding: 7px;
+  background-color: mediumslateblue;
 }
 
-.title{
-  background-color: rgb(136, 181, 219); 
+.title {
+  background-color: rgb(136, 181, 219);
   padding: 5px;
   margin-bottom: 5px;
 }
 
 .TopPollTitle {
-     margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 141px) {
-     .TopPollTitle {
-          display: none;
-     }
-     .TopPolls {
-          border: solid #000000;
-          width: 100%;
-          height: fit-content;
-          background-color: cyan
-     }
+  .TopPollTitle {
+    display: none;
+  }
+  .TopPolls {
+    border: solid #000000;
+    width: 100%;
+    height: fit-content;
+    background-color: cyan;
+  }
 }
 
 .pollName {
-     background-color: #913dff;
-     color: #fea8ff;
+  background-color: #913dff;
+  color: #fea8ff;
 }
 
 .btn1 {
-     margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .pollOptions {
-     color: #ff63f7;
+  color: #ff63f7;
 }
 
 .PollOptions {
-     font-size: 3ex;
+  font-size: 3ex;
 }
 
 @media (max-width: 566px) {
-     .TopPolls {
-          border: solid #000000;
-          width: 98vw;
-          height: fit-content;
-          background-color: cyan
-     }
+  .TopPolls {
+    border: solid #000000;
+    width: 98vw;
+    height: fit-content;
+    background-color: cyan;
+  }
 }
 
 .TopPollEach {
-     margin-top: 20px;
-     border: solid #000000;
-     width: fit-content;
+  margin-top: 20px;
+  border: solid #000000;
+  width: fit-content;
+}
+
+button {
+  cursor: pointer;
 }
